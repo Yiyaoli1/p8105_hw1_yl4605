@@ -30,7 +30,7 @@ Take the mean of each variable in my data frame.
 ```{r mean_pull_var}
 mean(pull(prob1_df, samp))
 mean(pull(prob1_df, samp_gt_0))
-mean(pull(prob1_df, char_vec))
+mean(pull(prob1_df, char_vec,))
 mean(pull(prob1_df, factor_vec))
 ```
 
@@ -46,7 +46,26 @@ as.numeric(pull(prob1_df, factor_vec))
 ```{r}
 as.numeric(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
 as.factor(pull(prob1_df, samp_gt_0)) * pull(prob1_df, samp)
-as.numeric(as.factor(pull(prob1_df, samp_gt_0)))* pull(prob1_df, samp)
+as.numeric(as.factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
 ```
 
 ## Problem 2
+
+Write a short description of the penguins dataset
+
+```{r}
+data("penguins", package = "palmerpenguins")
+names(penguins)
+levels(pull(penguins,species))
+levels(pull(penguins,island))
+range(pull(penguins,bill_length_mm), na.rm = TRUE)
+range(pull(penguins,bill_depth_mm), na.rm = TRUE)
+range(pull(penguins,flipper_length_mm), na.rm = TRUE)
+range(pull(penguins,body_mass_g), na.rm = TRUE)
+levels(pull(penguins,sex))
+range(pull(penguins,year))
+```
+
+
+
+
