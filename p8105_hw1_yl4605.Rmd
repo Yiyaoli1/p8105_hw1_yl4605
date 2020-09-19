@@ -55,33 +55,41 @@ as.numeric(as.factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
 data("penguins", package = "palmerpenguins")
 ```
 
-a short discription of penguins dataset
-The important variables in penguins dataset are **`r names(penguins)`**.
+Here is a short description of the penguins dataset.
 
-```{r}
-names(penguins)
-levels(pull(penguins,species))
-levels(pull(penguins,island))
-range(pull(penguins,bill_length_mm), na.rm = TRUE)
-range(pull(penguins,bill_depth_mm), na.rm = TRUE)
-range(pull(penguins,flipper_length_mm), na.rm = TRUE)
-range(pull(penguins,body_mass_g), na.rm = TRUE)
-levels(pull(penguins,sex))
-range(pull(penguins,year))
-```
 
-the size of the dataset 
+The names of important variables are`r names(penguins)`.
 
-```{r}
-nrow(penguins)
-ncol(penguins)
-```
 
-the mean flipper length
+The species contains `r levels(pull(penguins,species))`.
 
-```{r}
-mean(range(pull(penguins,flipper_length_mm), na.rm = TRUE))
-```
+
+The islands contains `r  levels(pull(penguins,island))`.
+
+
+The bill lengths range is `r  range(pull(penguins,bill_length_mm), na.rm = TRUE)`.
+
+
+The bill depth range is `r range(pull(penguins,bill_depth_mm), na.rm = TRUE)`.
+
+
+Their flipper length range is `r range(pull(penguins,flipper_length_mm), na.rm = TRUE)`.
+
+
+Their body mass range is `r range(pull(penguins,body_mass_g), na.rm = TRUE)`.
+
+
+The sex : `r levels(pull(penguins,sex))`.
+
+
+The year of the data : `r range(pull(penguins,year))`.
+
+
+The dataset consists of `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+
+The mean flipper length is `r mean(range(pull(penguins,flipper_length_mm), na.rm = TRUE))`
+
+
 
 Scatter plot of flipper_length_mm (y) vs bill_length_mm(x)
 
