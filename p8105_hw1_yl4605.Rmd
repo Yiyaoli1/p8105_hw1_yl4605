@@ -55,6 +55,11 @@ Write a short description of the penguins dataset
 
 ```{r}
 data("penguins", package = "palmerpenguins")
+```
+
+the data in this dataset, including names / values of important variables
+
+```{r}
 names(penguins)
 levels(pull(penguins,species))
 levels(pull(penguins,island))
@@ -66,6 +71,18 @@ levels(pull(penguins,sex))
 range(pull(penguins,year))
 ```
 
+the size of the dataset 
+
+```{r}
+nrow(penguins)
+ncol(penguins)
+```
+
+the mean flipper length
+
+```{r}
+mean(range(pull(penguins,flipper_length_mm), na.rm = TRUE))
+```
 
 
 
