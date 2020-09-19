@@ -51,13 +51,12 @@ as.numeric(as.factor(pull(prob1_df, samp_gt_0))) * pull(prob1_df, samp)
 
 ## Problem 2
 
-Write a short description of the penguins dataset
-
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
 
-the data in this dataset, including names / values of important variables
+a short discription of penguins dataset
+The important variables in penguins dataset are **`r names(penguins)`**.
 
 ```{r}
 names(penguins)
@@ -84,5 +83,19 @@ the mean flipper length
 mean(range(pull(penguins,flipper_length_mm), na.rm = TRUE))
 ```
 
+Scatter plot of flipper_length_mm (y) vs bill_length_mm(x)
 
+```{r}
+plot_df = tibble(
+  x = pull(penguins,bill_length_mm),
+  y = pull(penguins,flipper_length_mm),
+  species = pull(penguins,species)
+)
+
+ggplot(plot_df, aes(x = x, y = y, color = species)) + geom_point()
+```
+
+```{r}
+ggsave("scatterplot.pdf", width = 4, height = 4)
+```
 
